@@ -8,4 +8,5 @@ This is a demo of [OpenCALM](https://huggingface.co/cyberagent/open-calm-7b) dev
 
 - torch
 - transformers
+- accelerate
 - streamlit
