@@ -5,7 +5,17 @@ import streamlit as st
 
 
 def generate_text_by_open_calm(input_text: str) -> str:
+    """
+    Generate text by OpenCALM
 
+    Parameters
+    ----------
+    input_text: str
+
+    Returns
+    -------
+    output: str
+    """
     model_name = "cyberagent/open-calm-small"
 
     model = AutoModelForCausalLM.from_pretrained(model_name,
@@ -31,6 +41,17 @@ def generate_text_by_open_calm(input_text: str) -> str:
 
 
 def generate_text_by_rinna_gpt_neox(input_text: str) -> str:
+    """
+    Generate text by Rinna GPT-NeoX
+
+    Parameters
+    ----------
+    input_text: str
+
+    Returns
+    -------
+    output: str
+    """
     model_name = "rinna/japanese-gpt-neox-small"
 
     model = AutoModelForCausalLM.from_pretrained(model_name,
@@ -59,12 +80,7 @@ def generate_text_by_rinna_gpt_neox(input_text: str) -> str:
 if __name__ == "__main__":
     st.title("JPN LLM")
 
-    # print(torch.backends.mps.is_available())
-    # device = torch.device('mps')
-
     model_names = ["OpenCALM", "Rinna GPT-NeoX"]
-    model_types = ["cyberagent/open-calm-small",
-                   "rinna/japanese-gpt-neox-small"]
 
     with st.sidebar:
         selected_model = st.selectbox(
